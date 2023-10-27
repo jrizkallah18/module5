@@ -1,0 +1,74 @@
+# Problem 1
+
+#Use a loop to print Hello World 100 times 
+for greeting in range(100):
+    print("Hello World")
+
+
+  
+# Problem 2
+#Write a loop that prints each number on a new line
+for num in [12, 10, 32, 3, 66, 17, 42, 99, 20]:
+    print(num)
+#Write a loop that prints each number and its square on a new line
+for num in [12, 10, 32, 3, 66, 17, 42, 99, 20]:
+    print(num)
+    print(num ** 2)
+
+
+import turtle
+
+# Problem 3
+#Ask the user to enter:
+#number of sides
+#length of sides 
+#color of line
+#color of fill
+num_of_sides = int(input("How many sides does your polygon have? "))
+length_of_side = int(input("What are the lengths of your polygon sides? "))
+color_of_line = str(input("What color are the lines of your polygon? "))
+color_of_fill = str(input("What color is the fill of your polygon? "))
+
+#simplify your variables 
+sides = num_of_sides
+length = length_of_side
+line_color = color_of_line
+fill_color = color_of_fill
+
+angle = 360 / sides #Calc for the shape 
+
+window = turtle.Screen()
+poly = turtle.Turtle()
+poly.shape("turtle")
+poly.color(color_of_line)
+poly.fillcolor(fill_color)
+poly.begin_fill()
+#Create a loop that draw a line to the amount of sides
+for shape in range(sides):
+    poly.forward(length)
+    poly.left(angle)
+#end the fill
+poly.end_fill()
+window.exitonclick()
+
+
+
+
+  # Problem 4
+#Consider a program that iterates the integers from 1 to 50.
+
+
+#creat a loop for the range 1-50
+for num in range(1,51):
+    if num % 3 == 0 and num % 5 == 0:
+        print(f"{num} is divisible by both three and five")
+    elif num % 3 == 0:
+        print(f"{num} is divisible by three")
+    elif num % 5 == 0:
+        print(f"{num} is divisible by five")
+    else:
+        print(num)
+
+
+
+
