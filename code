@@ -1,12 +1,24 @@
-# Problem 1
+#Jonathan Rizkallah
+#October 29th 2023
+#Module 5
 
+"""
+Problem 1 – Consider a program that prints “Hello World” to the screen 100 times.
+Use draw.io to draw the flow of execution. Then write the program.
+Submit both the flowchart and the code.
+
+"""
 #Use a loop to print Hello World 100 times 
-for greeting in range(100):
-    print("Hello World")
+for greeting in range(1, 101):
+    print(greeting, "Hello World")
 
+"""
+Problem 2 – Assume you have a list of numbers 12, 10, 32, 3, 66, 17, 42, 99, 20.
+    •   Write a loop that prints each of the numbers on a new line.
+    •   Write a loop that prints each number and its square on a new line.
 
-  
-# Problem 2
+"""
+
 #Write a loop that prints each number on a new line
 for num in [12, 10, 32, 3, 66, 17, 42, 99, 20]:
     print(num)
@@ -15,10 +27,19 @@ for num in [12, 10, 32, 3, 66, 17, 42, 99, 20]:
     print(num)
     print(num ** 2)
 
+# for num in [12, 10, 32, 3, 66, 17, 42, 99, 20]:
+#     print(f"{num} squared is equal to { num** 2}")
+
 
 import turtle
 
-# Problem 3
+"""
+Problem 3 – Write a program that asks the user for the number of sides, the length of the side,
+the color of the line, and the fill color of a regular polygon.
+The program should draw the polygon and then fill it in.
+
+"""
+
 #Ask the user to enter:
 #number of sides
 #length of sides 
@@ -35,11 +56,12 @@ length = length_of_side
 line_color = color_of_line
 fill_color = color_of_fill
 
-angle = 360 / sides #Calc for the shape 
+angle = 360 / sides#Calc for the shape 
 
 window = turtle.Screen()
 poly = turtle.Turtle()
 poly.shape("turtle")
+poly.turtlesize(.5)
 poly.color(color_of_line)
 poly.fillcolor(fill_color)
 poly.begin_fill()
@@ -53,13 +75,17 @@ window.exitonclick()
 
 
 
+"""
+Problem 4 – Consider a program that iterates the integers from 1 to 50.
+For multiples of three print “Divisible by three” instead of the number and for
+the multiples of five print “Divisible by five”. For numbers which are multiples
+of both three and five print “Divisible by both”. Use draw.io to draw the flow of execution.
+Then write the program. Submit both the flowchart and the code.
 
-  # Problem 4
+"""
 #Consider a program that iterates the integers from 1 to 50.
 
-
-#creat a loop for the range 1-50
-for num in range(1,51):
+for num in range(1,51): #creat a loop for the range 1-50
     if num % 3 == 0 and num % 5 == 0:
         print(f"{num} is divisible by both three and five")
     elif num % 3 == 0:
@@ -71,4 +97,416 @@ for num in range(1,51):
 
 
 
+"""
+Problem 5 – Write a program to draw some kind of picture.
+Be creative and experiment with the turtle methods provided in Summary of Turtle Methods. 
 
+"""
+import turtle 
+
+window = turtle.Screen()
+window.bgcolor("Sky blue")
+
+# Turtles
+g = turtle.Turtle() # Grass
+c = turtle.Turtle() # Cloud
+s = turtle.Turtle() # Sun
+d = turtle.Turtle() # Drawing/House
+w = turtle.Turtle() # Window
+p = turtle.Turtle() # Pet
+
+for all_turtles in [g, c , s, d, w, p]: # Changes all turtle shapes to blank so they dont disrupt the drawing
+	all_turtles.shape("blank")
+
+for all_turtles2 in [g, c , s, d, w, p]: # Changes all the turtle speeds so the drawing is done faster
+	all_turtles2.speed(10) 
+
+# Grass
+g.fillcolor("green")
+g.begin_fill()
+g.left(180)
+g.up()
+g.forward(1000)
+g.right(180)
+g.down()
+
+for grass in range(4):
+	g.forward(2000)
+	g.right(90)
+g.end_fill()
+
+# Clouds
+c.fillcolor("white")
+c.up()
+c.left(180)
+c.forward(50)
+c.right(90)
+c.forward(200)
+c.right(90)
+c.down()
+
+c.begin_fill()
+c.forward(150)
+c.left(90)
+c.forward(20)
+for cloud in range (1, 15):
+  c.left(10)
+  c.forward(7)
+c.left(220)
+
+for cloud in range (1,18):
+  c.left(10)
+  c.forward(9)
+c.left(200)
+
+for cloud in range (1,18):
+  c.left(10)
+  c.forward(14)
+c.forward(12)
+c.left(90)
+c.forward(260)
+c.end_fill()
+
+# Sun
+s.up()
+s.forward(400)
+s.left(90)
+s.forward(400)
+s.right(90)
+s.down()
+
+s.fillcolor("yellow")
+s.begin_fill()
+for sun in range(20):
+	s.forward(20)
+	s.right(360 / 20)
+s.end_fill()
+
+# House
+d.fillcolor("firebrick4")
+d.begin_fill()
+for draw in range(2):
+	d.forward(200)
+	d.left(90)
+	d.forward(150)
+	d.left(90)
+d.end_fill()
+d.left(90)
+d.up()
+d.forward(150)
+d.down()
+
+# Roof
+d.fillcolor("gray20")
+d.begin_fill()
+d.right(45)
+d.forward(141.42)
+d.right(90)
+d.forward(141.42)
+d.right(135)
+d.forward(200)
+d.end_fill()
+
+# Door
+d.left(90)
+d.up()
+d.forward(150)
+d.left(90)
+d.forward(75)
+d.left(90)
+d.down()
+d.fillcolor("orange")
+d.begin_fill()
+d.forward(75)
+d.right(90)
+d.forward(50)
+d.right(90)
+d.forward(75)
+d.end_fill()
+
+d.up()
+d.right(90)
+d.forward(10)
+d.right(90)
+d.forward(25)
+d.down()
+
+# Door Knob
+d.fillcolor("black")
+d.begin_fill()
+for door in range(10):
+	d.forward(1.5)
+	d.right(360 / 10)
+d.end_fill()
+
+# Window
+w.up()
+w.forward(25)
+w.left(90)
+w.forward(140)
+w.right(90)
+w.down()
+
+w.fillcolor("light blue")
+w.begin_fill()
+w.forward(150)
+w.right(90)
+w.forward(50)
+w.right(90)
+w.forward(150)
+w.right(90)
+w.forward(50)
+w.end_fill()
+
+w.right(90)
+w.forward(50)
+w.right(90)
+w.forward(50)
+w.left(90)
+w.forward(50)
+w.left(90)
+w.forward(50)
+w.right(90)
+w.forward(50)
+w.right(90)
+w.forward(25)
+w.right(90)
+w.forward(150)
+
+# Dog
+p.shapesize(0.2, 0.2, .2)
+p.fillcolor("pale goldenrod")
+p.begin_fill()
+p.left(180)
+p.forward(150)
+p.right(90)
+
+p.up()
+p.forward(5)
+p.left(45)
+p.down()
+
+# Body
+p.begin_fill()
+p.forward(20)
+p.right(90)
+p.forward(40)
+p.right(90)
+p.forward(20)
+p.right(90)
+p.forward(40)
+p.right(90)
+p.end_fill()
+p.left(45)
+
+p.up()
+p.forward(5)
+p.right(90)
+p.down()
+
+# Back legs
+p.begin_fill()
+p.forward(7)
+p.right(90)
+p.forward(10)
+p.right(90)
+p.forward(12)
+p.right(90)
+p.forward(10)
+p.right(90)
+p.forward(12)
+p.end_fill()
+
+p.up()
+p.right(180)
+p.forward(11)
+p.left(135)
+p.forward(30)
+p.down()
+
+# Front legs
+p.begin_fill()
+p.right(135)
+p.forward(22)
+p.left(90)
+p.forward(10)
+p.left(90)
+p.forward(30)
+p.left(90)
+p.forward(10)
+p.left(90)
+p.forward(9)
+p.end_fill()
+
+p.up()
+p.left(180)
+p.forward(17)
+p.left(90)
+p.forward(5)
+p.right(90)
+p.down()
+
+# Head
+p.begin_fill()
+for head in range(20):
+	p.forward(4)
+	p.right(360 / 20)
+p.end_fill()
+
+p.up()
+p.forward(8)
+p.right(90)
+p.forward(7)
+p.down()
+
+# Eyes
+p.fillcolor("white")
+p.begin_fill()
+for eyes in range(10):
+	p.forward(1.5)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.forward(10)
+p.down()
+
+p.begin_fill()
+for eyes in range(10):
+	p.forward(1.5)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.left(180)
+p.forward(4.7)
+p.left(90)
+p.forward(5)
+p.left(90)
+p.down()
+
+# Nose
+p.fillcolor("pink")
+p.begin_fill()
+for nose in range(10):
+	p.forward(1)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.right(90)
+p.forward(4)
+p.right(90)
+p.forward(1)
+p.left(180)
+p.down()
+
+# Snout
+p.fillcolor("chocolate4")
+p.begin_fill()
+for snout in range(10):
+	p.forward(2.7)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.left(90)
+p.forward(15)
+p.left(90)
+p.forward(2)
+p.right(90)
+p.down()
+
+# Left Ear
+p.fillcolor("pale goldenrod")
+p.begin_fill()
+p.forward(7)
+for ear in range(5):
+	p.left(45)
+	p.forward(2)
+p.right(45)
+p.forward(4)
+p.end_fill()
+
+p.up()
+p.left(90)
+p.forward(9)
+p.down()
+
+# Right Ear
+p.left(90)
+p.begin_fill()
+p.forward(8)
+for ear in range(5):
+ 	p.right(45)
+ 	p.forward(2)
+p.left(45)
+p.forward(4)
+p.end_fill()
+
+p.up()
+p.forward(9)
+p.right(90)
+p.down()
+
+# Right Eye
+p.fillcolor("black")
+p.begin_fill()
+for eyes in range(10):
+	p.forward(.3)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.forward(9)
+p.down()
+
+# Left Eye
+p.begin_fill()
+for eyes in range(10):
+	p.forward(.2)
+	p.right(360 / 10)
+p.end_fill()
+
+p.up()
+p.left(90)
+p.forward(11)
+p.down()
+
+# Lips
+p.color("pink")
+for lips in range(4):
+	p.left(45)
+	p.forward(1.2)
+p.left(180)
+for lip in range(4):
+	p.forward(1.2)
+	p.left(45)
+
+p.up()
+p.left(90)
+p.forward(35)
+p.left(90)
+p.forward(17.5)
+p.right(45)
+p.down()
+
+# Tail
+p.color("black")
+p.fillcolor("pale goldenrod")
+p.begin_fill()
+for tail in range(4):
+	p.forward(8)
+	p.right(15)
+p.left(15)
+
+for tail in range(5):
+	p.left(36)
+	p.forward(1)
+
+for tail in range(4):
+	p.forward(8)
+	p.left(15)
+p.end_fill()
+
+window.exitonclick()
