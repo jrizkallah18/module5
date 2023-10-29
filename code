@@ -9,8 +9,8 @@ Submit both the flowchart and the code.
 
 """
 #Use a loop to print Hello World 100 times 
-for greeting in range(1, 101):
-    print(greeting, "Hello World")
+for greeting in range(100):
+    print("Hello World")
 
 """
 Problem 2 – Assume you have a list of numbers 12, 10, 32, 3, 66, 17, 42, 99, 20.
